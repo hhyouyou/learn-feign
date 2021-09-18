@@ -1,0 +1,6 @@
+
+logging:
+  pattern:
+    level: debug
+  level:
+    com.djx.learn.feign.feign.MqttFeign.java: debug
