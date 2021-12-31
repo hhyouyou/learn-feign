@@ -3,7 +3,6 @@ package com.djx.learn.feign.config;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.context.EnvironmentAware;
 import org.springframework.context.ResourceLoaderAware;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportBeanDefinitionRegistrar;
 import org.springframework.core.env.Environment;
 import org.springframework.core.io.ResourceLoader;
@@ -24,7 +23,6 @@ public class TestRegistrar implements ImportBeanDefinitionRegistrar, Environment
 
     @Override
     public void setEnvironment(Environment environment) {
-
 
 
     }

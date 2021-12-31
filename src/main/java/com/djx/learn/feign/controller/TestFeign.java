@@ -1,6 +1,5 @@
 package com.djx.learn.feign.controller;
 
-import com.djx.learn.feign.config.FeignConfig;
 import com.djx.learn.feign.config.TestRegistrar;
 import com.djx.learn.feign.feign.MqttFeign;
 import com.djx.learn.feign.model.MqttResponse;
@@ -24,8 +23,6 @@ public class TestFeign {
     @Resource
     private MqttFeign mqttFeign;
 
-    @Resource
-    private FeignConfig feignConfig;
 
 //    @Resource
 //    private TestRegistrar testRegistrar;

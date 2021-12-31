@@ -26,10 +26,9 @@ public class FeignConfig {
      */
     @Bean
     public Feign.Builder feignHystrixBuilder() {
-        Feign.Builder builder = Feign.builder()
+        return Feign.builder()
                 .queryMapEncoder(new FeignAutoQueryMapEncoder())
                 .logLevel(Logger.Level.FULL);
-        return builder;
     }
 
 }
