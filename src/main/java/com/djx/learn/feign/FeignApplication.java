@@ -31,6 +31,7 @@ import java.util.Map;
  * @author djx
  */
 @EnableFeignClients
+@FeignApplication.EnableTestFeign
 @SpringBootApplication
 public class FeignApplication {
 
@@ -61,6 +62,12 @@ public class FeignApplication {
 //        Object ip = bean.getIp();
 //
 //        System.out.print(ip);
+
+
+        Feign feign = (Feign)context.getBean(Feign.class + "Feign");
+        feign.doAnything();
+        feign.doSomething();
+
     }
 
 
@@ -87,7 +94,6 @@ public class FeignApplication {
                     .setRole(BeanDefinition.ROLE_INFRASTRUCTURE)
                     .getBeanDefinition();
             registry.registerBeanDefinition(Feign.class + "Feign", beanDefinition);
-
 
         }
 
@@ -226,11 +232,10 @@ public class FeignApplication {
 
             T feign = (T) Proxy.newProxyInstance(target.type().getClassLoader(), new Class[]{target.type()}, (proxy, method, args) -> {
 
-                System.out.println("test1");
-
+                System.out.println("test1 start");
 
                 Object invoke = dispatch.get(method.getName()).invoke(args);
-                System.out.println("test1");
+                System.out.println("test1 end");
                 return invoke;
             });
 
